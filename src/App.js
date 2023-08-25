@@ -16,10 +16,9 @@ function App() {
       setCartIsShown(false);
   }
 
-  console.log(`cartIsShown=${cartIsShown}`)
   return (
     <CartProvider>
-      {cartIsShown && <Cart />}
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
       <main>
         <Meals />
